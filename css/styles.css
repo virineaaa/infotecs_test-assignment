@@ -1,0 +1,311 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #17222d;
+    color: #ffffff;
+    font-family: 'Nunito Sans', 'Open Sans', sans-serif;
+    white-space: nowrap;
+    margin: 0px auto;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+/* Стили таблицы */
+.table-container {
+    width: 50%;
+    min-width: 440px;
+    position: relative;
+    display: column;
+    text-align: center;
+    border: 1px solid #576574;
+    border-radius: 6px;
+}
+
+.table {
+
+    border-collapse: collapse;
+    border-radius: 6px;
+    transition: all linear 0.16s;
+}
+
+/* Стили столбцов */
+thead th {
+    color: #ffffff;
+    border-radius: 6px;
+}
+
+.th {
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    padding: 8px 26px 8px 12px;
+    border-bottom: 0.5px solid #576574;
+    user-select: none;
+}
+
+table th.asc,
+table th.desc {
+    color: #f48982;
+}
+
+table th[data-sort]::before,
+table th[data-sort]::after {
+    margin-right: 8px;
+    content: '';
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    right: 0px;
+    border: 6px solid transparent;
+    opacity: 0.4;
+}
+
+table th[data-sort]::before {
+    top: 6px;
+    border-bottom-color: #f48982;
+}
+
+table th[data-sort]::after {
+    top: 22px;
+    border-top-color: #f48982;
+}
+
+table th.asc::before,
+table th.desc::after {
+    opacity: 1;
+}
+
+.td {
+    position: relative;
+    z-index: 0;
+    font-size: 14px;
+    padding: 12px 12px;
+}
+
+.td-clamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    border-style: hidden;
+    white-space: pre-wrap;
+    padding: 4px 12px;
+}
+
+/* Стиль для иконок столбца eyeColor */
+.bi {
+    color: transparent;
+}
+
+.bi-eye-fill {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+}
+
+/* Выделение четных строк */
+tr:nth-child(even) {
+    background-color: #5997d21f;
+}
+
+/* Выделение строк при наведении */
+.tableData tr:hover {
+    background-color: #ffffffe2;
+    color: #000000;
+}
+
+/* Стили для панели пагинации */
+.pagination {
+    position: relative;
+    margin: 8px auto;
+    display: flex;
+    width: 50%;
+    border-radius: 20px;
+    min-width: 400px;
+    font-size: 20px;
+    padding: 8px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    background-color: #222f3e;
+    border: 1px solid #576574;
+}
+
+.items {
+    position: relative;
+    display: flex;
+    list-style: none;
+    line-height: 16px;
+    font-size: 14px;
+}
+
+.item {
+    cursor: pointer;
+    margin: 0px 12px;
+    align-content: center;
+}
+
+.item:hover {
+    transition: 0.4s ease;
+    color: #f48982;
+    transform: scale(1.2);
+}
+
+.btn {
+    cursor: pointer;
+    opacity: 0.4;
+    margin: 0px 16px;
+}
+
+.arrow-left {
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 18px solid #f48982;
+    background-color: transparent;
+    border-left: transparent;
+    opacity: 0.4;
+}
+
+.arrow-right {
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 18px solid #f48982;
+    background-color: transparent;
+    border-right: transparent;
+    opacity: 0.4;
+}
+
+.btn:hover {
+    opacity: 1;
+    transition: 0.8s ease;
+}
+
+ul li.active {
+    transition: 0.4s ease;
+    color: #f48982;
+    transform: scale(1.2);
+}
+
+/* Форма */
+.form {
+    position: relative;
+    display: flex;
+    margin: 20px;
+    padding: 80px 100px;
+}
+
+.edForm {
+    position: fixed;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    background-color: #222f3e;
+    border: 1px solid #576574;
+    border-radius: 6px;
+    padding: 20px 30px;
+}
+
+.form-items {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.form-item {
+    font-size: 14px;
+    margin: 8px 15px 8px 15px;
+    border-radius: 6px;
+    border: 1px solid #576574;
+    background-color: #17222d;
+    color: #ffffff;
+    padding: 8px;
+}
+
+.label {
+    font-size: 12px;
+    align-self: start;
+    padding: 10px 0px 0px 20px;
+}
+
+.edForm .p {
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+input .form-item {
+    height: 40px;
+}
+
+.textarea {
+    height: 100px;
+    resize: none;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+.textarea::-webkit-scrollbar {
+    width: 10px;
+}
+
+.textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    height: 5px;
+    background-color: #576574;
+}
+
+
+
+.form-btn {
+    background-color: #f48982;
+    font-size: 16px;
+    margin-top: 20px;
+    height: 50px;
+    width: 140px;
+    border-radius: 6px;
+    border: 1px solid #576574;
+}
+
+.btn-close {
+    margin-right: 0px;
+    position: relative;
+    display: flex;
+    align-self: flex-end;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    fill: #f48982;
+    border: none;
+}
+
+.formOff {
+    display: none;
+}
+
+.formOn {
+    display: flex;
+}
